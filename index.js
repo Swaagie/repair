@@ -7,13 +7,48 @@
  * @returns {Mixed} Repaired source.
  * @api public
  */
-module.exports = function repair(src) {
-  Object.keys(src).forEach(function (key) {
-    var t = {}.toString.call(src[key]).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+var repair = module.exports = function repair(src, iterate) {
+  var t = repair.type(src);
 
-    if ('object' === t || 'array' === t) return repair(src[key]);
-    if ('regexp' === t) return src[key] = new RegExp(src[key]);
-  });
+  if (src.iterator || 'object' === t || 'array' === t) {
+    Object.keys(src).forEach(function (key) {
+      src[key] = repair(src[key]);
+    });
+  }
 
-  return src;
+  return t in repair ? repair[t](src) : src;
 };
+
+/**
+ * Extended version of typeof check.
+ *
+ * @param {Mixed} value Instance of constructor.
+ * @returns {String} typeof instance.
+ * @api private
+ */
+repair.type = function type(value) {
+  return {}.toString.call(value).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+}
+
+/**
+ * Repair RegExp.
+ *
+ * @param {RegExp} value
+ * @returns {RegExp}
+ * @api private
+ */
+repair.regexp = function regexp(value) {
+  value = value.toString().split('/');
+  return new RegExp(value[1], value.pop());
+}
+
+/**
+ * Repair Date.
+ *
+ * @param {Date} value
+ * @returns {Date}
+ * @api private
+ */
+repair.date = function date(value) {
+  return new Date(value.toString());
+}
