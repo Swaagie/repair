@@ -1,6 +1,6 @@
 {
   "name": "repair",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Repair broken instances of native constructors.",
   "main": "index.js",
   "scripts": {
