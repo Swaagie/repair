@@ -1,0 +1,28 @@
+{
+  "name": "repair",
+  "version": "0.0.1",
+  "description": "Repair broken instances of native constructors.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Swaagie/repair.git"
+  },
+  "keywords": [
+    "repair",
+    "native",
+    "instances",
+    "regexp",
+    "references",
+    "vm",
+    "context"
+  ],
+  "author": "Martijn Swaagman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Swaagie/repair/issues"
+  },
+  "homepage": "https://github.com/Swaagie/repair#readme"
+}
