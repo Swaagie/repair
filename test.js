@@ -5,9 +5,7 @@ describe('Repair', function () {
     , result, base;
 
   function destroyInstance(script) {
-    var context = {};
-
-    vm.createContext(context);
+    var context = vm.createContext({});
     vm.runInContext('base=' + script, context);
 
     return context.base;
