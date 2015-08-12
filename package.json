@@ -4,7 +4,7 @@
   "description": "Repair broken instances of native constructors.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec ./test.js"
+    "test": "mocha --reporter spec ./test.js",
     "watch": "mocha --watch ./test.js",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha -- ./test.js",
     "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- ./test.js"
