@@ -24,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/Swaagie/repair/issues"
   },
-  "homepage": "https://github.com/Swaagie/repair#readme"
+  "homepage": "https://github.com/Swaagie/repair#readme",
+  "devDependencies": {
+    "assume": "~1.2.5",
+    "istanbul": "~0.3.17",
+    "mocha": "~2.2.5",
+    "pre-commit": "~1.1.1"
+  }
 }

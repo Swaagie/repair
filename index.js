@@ -7,7 +7,7 @@
  * @returns {Mixed} Repaired source.
  * @api public
  */
-var repair = module.exports = function repair(src, iterate) {
+var repair = module.exports = function repair(src) {
   var t = repair.type(src);
 
   if (src.iterator || 'object' === t || 'array' === t) {
@@ -28,7 +28,7 @@ var repair = module.exports = function repair(src, iterate) {
  */
 repair.type = function type(value) {
   return {}.toString.call(value).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
-}
+};
 
 /**
  * Repair RegExp.
@@ -38,9 +38,11 @@ repair.type = function type(value) {
  * @api private
  */
 repair.regexp = function regexp(value) {
+  if (value instanceof RegExp) return value;
+
   value = value.toString().split('/');
   return new RegExp(value[1], value.pop());
-}
+};
 
 /**
  * Repair Date.
@@ -50,5 +52,5 @@ repair.regexp = function regexp(value) {
  * @api private
  */
 repair.date = function date(value) {
-  return new Date(value.toString());
-}
+  return value instanceof Date ? value : new Date(value.toString());
+};

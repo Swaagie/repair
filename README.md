@@ -1,5 +1,12 @@
 # Repair
 
+[![Version npm][version]](http://browsenpm.org/package/repair)[![Build Status][build]](https://travis-ci.org/Swaagie/repair)[![Dependencies][david]](https://david-dm.org/Swaagie/repair)[![Coverage Status][cover]](https://coveralls.io/r/Swaagie/repair?branch=master)
+
+[version]: http://img.shields.io/npm/v/repair.svg?style=flat-square
+[build]: http://img.shields.io/travis/Swaagie/repair/master.svg?style=flat-square
+[david]: https://img.shields.io/david/Swaagie/repair.svg?style=flat-square
+[cover]: http://img.shields.io/coveralls/Swaagie/repair/master.svg?style=flat-square
+
 Repair broken instances of native JS constructors, making `instanceof` work!
 Running code in different VMs will break the instance's reference.
 Simply pass an instance or collection of instances to repair and `instanceof`
