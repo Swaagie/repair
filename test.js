@@ -41,6 +41,16 @@ describe('Repair', function () {
     assume(repair(new Date)).to.be.instanceof(Date);
   });
 
+  it('ignores undefined instances', function () {
+    result = repair({
+      valid: new Date,
+      date: undefined
+    });
+
+    assume(result).to.have.property('date', undefined);
+    assume(result.valid).to.be.instanceof(Date);
+  });
+
   describe('#type', function () {
     it('is a function', function () {
       assume(repair.type).to.be.a('function');

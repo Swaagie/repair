@@ -10,7 +10,7 @@
 var repair = module.exports = function repair(src) {
   var t = repair.type(src);
 
-  if (src.iterator || 'object' === t || 'array' === t) {
+  if (src && src.iterator || 'object' === t || 'array' === t) {
     Object.keys(src).forEach(function (key) {
       src[key] = repair(src[key]);
     });
