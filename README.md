@@ -1,5 +1,7 @@
 # Repair
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Swaagie/repair.svg)](https://greenkeeper.io/)
+
 [![Version npm][version]](http://browsenpm.org/package/repair)[![Build Status][build]](https://travis-ci.org/Swaagie/repair)[![Dependencies][david]](https://david-dm.org/Swaagie/repair)[![Coverage Status][cover]](https://coveralls.io/r/Swaagie/repair?branch=master)
 
 [version]: http://img.shields.io/npm/v/repair.svg?style=flat-square
